@@ -57,7 +57,12 @@ while run:
     pipe_ind = 0
     if len(pipes) > 1 and bird.x > pipes[0].x + pipes[0].PIPE_TOP.get_width():  # determine whether to use the first or second
         pipe_ind = 1
-    is_jump = bird.brain.predict(np.array([[bird.y, abs(bird.y - pipes[pipe_ind].height), abs(bird.y - pipes[pipe_ind].bottom)]]))
+    input = [[
+                bird.y / WIN_HEIGHT, 
+                abs(bird.y - pipes[pipe_ind].height) / WIN_HEIGHT, 
+                abs(bird.y - pipes[pipe_ind].bottom) / WIN_HEIGHT
+        ]]
+    is_jump = bird.brain.predict(np.array(input))
     if is_jump > 0.5:
         bird.jump()
 

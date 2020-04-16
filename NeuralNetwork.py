@@ -16,8 +16,9 @@ class NeuralNetModel:
         weights = self.model.get_weights()[0]
         bias = self.model.get_weights()[1]
 
-        if np.random.rand(1) <= rate:
-            bias += np.random.normal(BIAS_STDEV, BIAS_MEAN,1)
+        for i, w in enumerate(bias):
+            if np.random.rand(1) <= rate:
+                bias[i] += np.random.normal(BIAS_STDEV, BIAS_MEAN,1)
 
         for i, w in enumerate(weights):
             if np.random.rand(1) <= rate:

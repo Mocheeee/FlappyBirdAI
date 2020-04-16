@@ -74,7 +74,12 @@ while run:
         if bird.y < 0 or bird.y > base.y-bird.img.get_height():
             rm_bird.append(bird)
             genomes.append(bird)
-        is_jump = bird.brain.predict(np.array([[bird.y, abs(bird.y - pipes[pipe_ind].height), abs(bird.y - pipes[pipe_ind].bottom)]]))
+        input = [[
+                bird.y / WIN_HEIGHT, 
+                abs(bird.y - pipes[pipe_ind].height) / WIN_HEIGHT, 
+                abs(bird.y - pipes[pipe_ind].bottom) / WIN_HEIGHT
+        ]]
+        is_jump = bird.brain.predict(np.array(input))
         if is_jump > 0.5:
             birds[i].jump()
 

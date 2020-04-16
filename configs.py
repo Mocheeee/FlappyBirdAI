@@ -14,11 +14,11 @@ BACKGOURD_IMG = pygame.transform.scale2x(pygame.image.load(IMG_PATH['backgroud']
 
 STAT_FONT = pygame.font.SysFont('comicsans', 50)
 
-MUTATE_RATE = 0.8
+MUTATE_RATE = 0.2
 POPULATION_SIZE = 50
 POOL_SIZE = 100
-MAX_GENERATIONS = 100
-MAX_SCORE = 100
+MAX_GENERATIONS = 50
+MAX_SCORE = 200
 
 WEIGHT_STDEV = 0
 WEIGHT_MEAN = 1
