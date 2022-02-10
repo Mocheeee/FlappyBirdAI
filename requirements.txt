@@ -3,5 +3,5 @@ pygame==2.0.0.dev4
 numpy==1.18.2
 scikit-learn==0.22.2.post1
 h5py==2.10.0
-tensorflow==2.1.0
+tensorflow==2.5.3
 keras==2.3.1
